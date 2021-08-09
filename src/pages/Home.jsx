@@ -3,10 +3,6 @@ import SearchBar from '../components/SearchBar';
 import ListProducts from '../components/ListProducts';
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <section className="main-content">
