@@ -15,8 +15,7 @@ class Header extends Component {
           to="/cart"
           data-testid="shopping-cart-button"
         >
-          {/* O componente abaixo renderiza a imagem do carrinho */}
-          <Carrinho />
+          Carrinho
         </Link>
 
       </header>
