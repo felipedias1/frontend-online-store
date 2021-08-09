@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import './App.css';
 import Home from './pages/Home';
+import ShoppingCart from './pages/ShoppingCart';
 
 class App extends React.Component {
   render() {
@@ -14,7 +15,12 @@ class App extends React.Component {
             <Route
               exact
               path="/"
-              render={ () => <Home /> } />
+              render={ () => <Home /> }
+            />
+            <Route
+              path="/cart"
+              render={ () => (<ShoppingCart />) }
+            />
           </Switch>
         </BrowserRouter>
       </div>

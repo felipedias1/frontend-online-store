@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { HiOutlineShoppingCart } from 'react-icons/hi';
 
 class Header extends Component {
   render() {
@@ -9,8 +11,15 @@ class Header extends Component {
           <p data-testid="home-initial-message">
             Digite algum termo de pesquisa ou escolha uma categoria.
           </p>
-
         </div>
+        <Link
+          to="/cart"
+          data-testid="shopping-cart-button"
+        >
+          {/* O componente abaixo renderiza a imagem do carrinho */}
+          <HiOutlineShoppingCart />
+        </Link>
+
       </header>
     );
   }
