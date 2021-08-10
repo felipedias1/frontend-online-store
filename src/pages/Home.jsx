@@ -36,10 +36,10 @@ class Home extends Component {
   // inputSearch é o input de procura da SearchBar
   async handleSubmit(inputSearch = '') {
     const { category } = this.state;
-    const { products } = await getProductsFromCategoryAndQuery(category, inputSearch);
-    this.updateListProducts(products);
+    const { results } = await getProductsFromCategoryAndQuery(category, inputSearch);
+    this.updateListProducts(results);
   }
-
+  
   onChangeCategory({ target: { value } }) {
     this.setState({ category: value }, () => {
       this.handleSubmit();

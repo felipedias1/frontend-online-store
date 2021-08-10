@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 class ListProducts extends Component {
 
@@ -15,9 +14,5 @@ class ListProducts extends Component {
     );
   }
 }
-
-ListProducts.propTypes = {
-  handleSubmit: PropTypes.func.isRequired,
-};
 
 export default ListProducts;
