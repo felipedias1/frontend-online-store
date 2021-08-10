@@ -1,4 +1,8 @@
 /* Definindo o estilo do corpo da página */
+a {
+  text-decoration: none;
+}
+
 body {
   background-color: rgb(252, 252, 252);
   box-sizing: border-box;
@@ -30,7 +34,8 @@ header {
   transition: transform 0.5s;
 }
 
-button, .btn {
+button,
+.btn {
   background-color: rgb(120, 122, 8);
   border: none;
   border-radius: 5px;
@@ -44,7 +49,9 @@ button, .btn {
   transition: transform 0.2s;
 }
 
-.header-container a:hover, button:hover, .btn:hover {
+.header-container a:hover,
+button:hover,
+.btn:hover {
   font-weight: 600;
   opacity: 100%;
   transform: scale(1.1);
@@ -60,17 +67,17 @@ button, .btn {
 
 /* Conteiner que lista as categorias existentes */
 .list-category {
-  align-items: flex-start;
+  /* align-items: flex-start; */
   background-color: rgb(255, 239, 168);
   border-radius: 2px;
   box-shadow: 0 4px 8px black;
   color: black;
   display: flex;
   flex-direction: column;
-  min-width: 260;
+  width: auto;
+  height: auto;
   padding: 10px;
 }
-
 
 .list-category label {
   transition: transform 0.2s;
@@ -91,10 +98,12 @@ button, .btn {
 .products-container {
   background-color: rgb(236, 235, 235);
   border-radius: 2px;
-  display: flex;
+  /* display: flexbox; */
   flex-flow: row wrap;
+  flex-direction: row;
   margin-left: 10px;
   padding: 15px;
+  width: 80%;
 }
 
 .products-container img {
@@ -119,9 +128,9 @@ button, .btn {
 }
 
 .card-container {
-  align-items: center;
+  align-items: auto;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
 }
 
 .checkout {
@@ -130,12 +139,14 @@ button, .btn {
   flex-flow: column wrap;
 }
 
-.cart-item, .detail-container, form {
+.cart-item,
+.detail-container,
+form {
   align-items: center;
   border: 1px solid black;
   border-radius: 10px;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   justify-content: space-around;
   margin: 10px;
   padding: 5px;
@@ -145,7 +156,8 @@ button, .btn {
   width: 80px;
 }
 
-.rating-container input, .rating-container textarea {
+.rating-container input,
+.rating-container textarea {
   display: flex;
   margin: 10px;
 }

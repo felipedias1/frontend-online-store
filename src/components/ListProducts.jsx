@@ -9,7 +9,7 @@ class ListProducts extends Component {
     return (
       <section>
         <div className="card-container">
-          <h4>Lista de Produtos</h4>
+          {/* <h4>Lista de Produtos</h4> */}
           {products.map((produto) => (
             <ProductCard
               key={ produto.id }

@@ -19,15 +19,17 @@ class ProductCard extends Component {
             <p className="product-title">{ title }</p>
             <img src={ thumbnail } alt="" />
             <p className="product-price">{` R$ ${price}`}</p>
+            <div>
+              <button
+                onClick={ () => console.log('Clicou') }
+                type="button"
+                data-testid="product-add-to-cart"
+              >
+                Adicionar ao Carrinho
+              </button>
+            </div>
           </div>
         </Link>
-        <button
-          onClick={ () => console.log('Clicou') }
-          type="button"
-          data-testid="product-add-to-cart"
-        >
-          Adicionar ao Carrinho
-        </button>
       </div>
     );
   }
