@@ -62,7 +62,7 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={ () => <Home setCart={ this.setCart } categories={ categories } /> } /> }
+            render={ () => <Home setCart={ this.setCart } categories={ categories } /> }
           />
           <Route
             path="/cart"

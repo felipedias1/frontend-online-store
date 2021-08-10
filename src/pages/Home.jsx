@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from '../components/SearchBar';
 import Category from '../components/Category';
-import { getCategories, getProductsFromCategoryAndQuery } from '../services/api';
+import { getCategories } from '../services/api';
 import '../App.css';
 
 class Home extends Component {
@@ -11,11 +11,11 @@ class Home extends Component {
     // Setando os states iniciais
     this.state = {
       // Guarda a categoria
-      category: '',
+      // category: '',
       // State que vai ter o array de categorias para ser escolhido
       listCategories: [],
       // State com o array de produtos
-      products: [],
+      // products: [],
     };
 
     // Prepara as funções para serem utilizadas em todo o componente
