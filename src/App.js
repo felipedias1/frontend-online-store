@@ -47,7 +47,7 @@ class App extends Component {
   }
 
   render() {
-    const { cart, categories } = this.state;
+    const { cart } = this.state;
 
     return (
       <BrowserRouter>
@@ -62,7 +62,8 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={ () => <Home setCart={ this.setCart } categories={ categories } /> }
+            render={ () => <Home /> }
+            // render={ () => <Home setCart={ this.setCart } categories={ categories } /> }
           />
           <Route
             path="/cart"

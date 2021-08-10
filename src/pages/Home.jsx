@@ -41,7 +41,6 @@ class Home extends Component {
   }
 
   onChangeCategory({ target: { value } }) {
-    console.log('mudou');
     this.setState({ category: value }, () => {
       this.handleSubmit();
     });
