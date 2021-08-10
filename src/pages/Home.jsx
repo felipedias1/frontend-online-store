@@ -41,6 +41,7 @@ class Home extends Component {
   }
 
   onChangeCategory({ target: { value } }) {
+    console.log('mudou');
     this.setState({ category: value }, () => {
       this.handleSubmit();
     });
@@ -60,7 +61,7 @@ class Home extends Component {
     const { listCategories, products } = this.state;
     return (
       <section className="main-content">
-        <div className="list-category" onChange={ this.onChangeCategory }>
+        <div className="list-category">
           {/* Executa o componente SearchBar aparecendo na section da... */}
           {/* ...listagem de produtos */}
           <SearchBar handleSubmit={ this.handleSubmit } />
@@ -69,7 +70,11 @@ class Home extends Component {
           { /* Lista as categorias, e chama o componente Category... */}
           {/* ...a cada categoria encontrada */}
           {listCategories.map((categoria) => (
-            <Category key={ categoria.name } category={ categoria } />
+            <Category
+              key={ categoria.name }
+              category={ categoria }
+              onChange={ this.onChangeCategory }
+            />
           ))}
         </div>
         <section className="products-container">
