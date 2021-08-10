@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
-import SearchBar from './SearchBar';
+import PropTypes from 'prop-types';
+import ProductCard from './ProductCard';
 
 class ListProducts extends Component {
   render() {
+    // Recebe a props de Produtos listados do filtro Categorias do componente Home
+    const { products } = this.props;
     return (
-      <div className="card-container">
-        {/* Executa o componente SearchBar aparecendo na section da... */}
-        {/* ...listagem de produtos */}
-        <SearchBar handleSubmit={ this.handleSubmit } />
-
-        <h4>Lista de Produtos</h4>
-      </div>
+      <section>
+        <div className="card-container">
+          <h4>Lista de Produtos</h4>
+          {products.map((produto) => (
+            <ProductCard
+              key={ produto.id }
+              produto={ produto }
+            />
+          ))}
+        </div>
+      </section>
     );
   }
 }
+
+ListProducts.propTypes = {
+  products: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default ListProducts;
