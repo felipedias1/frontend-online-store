@@ -61,8 +61,8 @@ button, .btn {
 /* Conteiner que lista as categorias existentes */
 .list-category {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
+  flex-direction: column;
   background-color: rgb(255, 239, 168);
   border-radius: 2px;
   box-shadow: 0 4px 8px black;
@@ -84,8 +84,8 @@ button, .btn {
 .list-category input {
   border: none;
   border-radius: 5px;
-  padding: 5px;
   margin: 10px 7px;
+  padding: 5px;
 }
 
 .products-container {
