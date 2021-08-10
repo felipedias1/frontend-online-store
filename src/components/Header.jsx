@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Header extends Component {
   render() {
@@ -13,7 +14,7 @@ class Header extends Component {
         </div>
         <Link
           to="/cart"
-          data-testid="shopping-cart-button"
+          data-testid="shopping-cart-size"
         >
           Carrinho
         </Link>
@@ -22,5 +23,9 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  cartItems: PropTypes.arrayOf,
+}.isRequired;
 
 export default Header;
