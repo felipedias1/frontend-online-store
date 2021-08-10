@@ -39,7 +39,7 @@ class Home extends Component {
     const { results } = await getProductsFromCategoryAndQuery(category, inputSearch);
     this.updateListProducts(results);
   }
-  
+
   onChangeCategory({ target: { value } }) {
     this.setState({ category: value }, () => {
       this.handleSubmit();
