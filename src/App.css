@@ -67,7 +67,7 @@ button, .btn {
   border-radius: 2px;
   box-shadow: 0 4px 8px black;
   color: black;
-  min-width: 260px;
+  min-width: 260;
   padding: 10px;
 }
 
@@ -89,9 +89,8 @@ button, .btn {
 }
 
 .products-container {
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 10px;
+  background-color: rgb(236, 235, 235);
+  border-radius: 2px;
   display: flex;
   flex-flow: row wrap;
   margin-left: 10px;

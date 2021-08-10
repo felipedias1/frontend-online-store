@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import SearchBar from '../components/SearchBar';
 import Category from '../components/Category';
 import { getCategories } from '../services/api';
 import '../App.css';
+import ListProducts from '../components/ListProducts';
 
 class Home extends Component {
   constructor(props) {
@@ -40,14 +40,16 @@ class Home extends Component {
     return (
       <section className="main-content">
         <div className="list-category" onChange={ this.onChangeCategory }>
-          <SearchBar handleSubmit={ this.handleSubmit } />
+          <h4>Categorias:</h4>
           { /* Lista as categorias, e chama o componente Category... */}
           {/* ...a cada categoria encontrada */}
-          { console.log(listCategories) }
           {listCategories.map((categoria) => (
             <Category key={ categoria.name } category={ categoria } />
           ))}
         </div>
+        <section className="products-container">
+          <ListProducts />
+        </section>
       </section>
     );
   }
