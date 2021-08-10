@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchBar from '../components/SearchBar';
 import Category from '../components/Category';
 import { getCategories, getProductsFromCategoryAndQuery } from '../services/api';
+import '../App.css';
 
 class Home extends Component {
   constructor(props) {
@@ -28,18 +29,10 @@ class Home extends Component {
     this.updateCategories();
   }
 
-  // onChangeCategory({ target: { value } }) {
-  //   this.setState({ category: value }, () => {
-  //     this.handleSubmit();
-  //   });
-  // }
-
   // que está sendo chamada no componentDidMount que pega as categorias e joga no array listCategories que está no State.
   async updateCategories() {
-    const categories = await getCategories();
-    this.setState({ listCategories: categories }, () => {
-      console.log(categories);
-    });
+    const listCategories = await getCategories();
+    this.setState({ listCategories });
   }
 
   render() {
@@ -50,6 +43,7 @@ class Home extends Component {
           <SearchBar handleSubmit={ this.handleSubmit } />
           { /* Lista as categorias, e chama o componente Category... */}
           {/* ...a cada categoria encontrada */}
+          { console.log(listCategories) }
           {listCategories.map((categoria) => (
             <Category key={ categoria.name } category={ categoria } />
           ))}
