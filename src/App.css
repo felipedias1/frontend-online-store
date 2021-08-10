@@ -62,11 +62,11 @@ button, .btn {
 .list-category {
   align-items: flex-start;
   background-color: rgb(255, 239, 168);
-  display: flex;
-  flex-direction: column;
   border-radius: 2px;
   box-shadow: 0 4px 8px black;
   color: black;
+  display: flex;
+  flex-direction: column;
   min-width: 260;
   padding: 10px;
 }
