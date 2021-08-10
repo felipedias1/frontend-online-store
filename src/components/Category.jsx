@@ -8,7 +8,6 @@ class Category extends Component {
     return (
       // Foi escolhido o input option para que o usuário escolha apenas uma opção de categoria
       <label htmlFor={ name }>
-        {name}
         <input
           data-testid="category"
           type="radio"
@@ -16,6 +15,7 @@ class Category extends Component {
           id={ name }
           name="category"
         />
+        { name }
       </label>
     );
   }
