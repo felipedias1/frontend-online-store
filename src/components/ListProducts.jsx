@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
-import SearchBar from './SearchBar';
+import PropTypes from 'prop-types';
 
 class ListProducts extends Component {
+
   render() {
     return (
-      <div className="card-container">
-        {/* Executa o componente SearchBar aparecendo na section da... */}
-        {/* ...listagem de produtos */}
-        <SearchBar handleSubmit={ this.handleSubmit } />
+      <section>
+        <div className="card-container">
 
-        <h4>Lista de Produtos</h4>
-      </div>
+          <h4>Lista de Produtos</h4>
+
+        </div>
+      </section>
     );
   }
 }
+
+ListProducts.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+};
 
 export default ListProducts;
