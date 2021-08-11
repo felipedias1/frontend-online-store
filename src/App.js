@@ -4,6 +4,7 @@ import Header from './components/Header';
 import './App.css';
 import Home from './pages/Home';
 import ShoppingCart from './pages/ShoppingCart';
+import PageDetails from './pages/PageDetails';
 import Checkout from './pages/Checkout';
 
 class App extends Component {
@@ -68,6 +69,11 @@ class App extends Component {
           <Route
             path="/cart"
             render={ () => (<ShoppingCart cart={ cart } />) }
+          />
+          <Route
+            path="/product/:category/:id"
+            component={ PageDetails }
+            render={ () => <PageDetails /> }
           />
         </Switch>
       </BrowserRouter>
