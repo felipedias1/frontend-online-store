@@ -72,8 +72,11 @@ class App extends Component {
           />
           <Route
             path="/product/:category/:id"
-            component={ PageDetails }
-            render={ () => <PageDetails /> }
+            // component={ PageDetails }
+            render={ ({ match }) => (<PageDetails
+              setCart={ this.setCart }
+              match={ match }
+            />) }
           />
         </Switch>
       </BrowserRouter>

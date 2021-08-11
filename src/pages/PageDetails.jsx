@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 
 class PageDetails extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       item: '',
     };
@@ -24,7 +24,11 @@ class PageDetails extends React.Component {
   }
 
   render() {
-    const { item: { title, thumbnail, price } } = this.state;
+    // const { produto: { title, thumbnail} } = this.props;
+    // const { produto } = this.props;
+    // const categoryId = produto.category_id;
+    const { setCart } = this.props;
+    const { item: { id, title, thumbnail, price } } = this.state;
     return (
       <div>
         {/* <button type="button" onClick={ this.searchId }>olá</button> */}
@@ -34,6 +38,13 @@ class PageDetails extends React.Component {
           R$
           {price}
         </p>
+        <button
+          type="button"
+          onClick={ () => setCart({ id, title, price, thumbnail }) }
+          data-testid="product-detail-add-to-cart"
+        >
+          Adicionar ao carrinho
+        </button>
       </div>
     );
   }
