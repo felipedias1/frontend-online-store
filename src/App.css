@@ -34,8 +34,7 @@ header {
   transition: transform 0.5s;
 }
 
-button, 
-.btn {
+button, .btn {
   background-color: rgb(120, 122, 8);
   border: none;
   border-radius: 5px;
@@ -49,9 +48,7 @@ button,
   transition: transform 0.2s;
 }
 
-.header-container a:hover, 
-button:hover, 
-.btn:hover {
+.header-container a:hover, button:hover, .btn:hover {
   font-weight: 600;
   opacity: 100%;
   transform: scale(1.1);
@@ -74,8 +71,8 @@ button:hover,
   display: flex;
   flex-direction: column;
   height: auto;
-  width: auto;
   padding: 10px;
+  width: auto;
 }
 
 .list-category label {
@@ -137,9 +134,7 @@ button:hover,
   flex-flow: column wrap;
 }
 
-.cart-item, 
-.detail-container, 
-form {
+.cart-item, .detail-container, form {
   align-items: center;
   border: 1px solid black;
   border-radius: 10px;
@@ -154,8 +149,7 @@ form {
   width: 80px;
 }
 
-.rating-container input, 
-.rating-container textarea {
+.rating-container input, .rating-container textarea {
   display: flex;
   margin: 10px;
 }
