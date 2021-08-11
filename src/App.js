@@ -11,6 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    // Inicia o state com um array cart que servirá para adicionar os itens do carrinho
     this.state = {
       cart: [],
     };
@@ -47,20 +48,22 @@ class App extends Component {
     });
   }
 
-  // Função usada no ProducCart onde conforme for clicando nos botões vai sendo alterado o
-  updateQuant(id, bool) {
+  // Função usada no ProducCart onde conforme for clicando nos botões vai sendo alterado
+  // id = proprio id do produto
+  // bool = identificador se vai adicionar(true) ou reduzir(false)
+  updateQuant(id, addOrDel) {
     this.setState((state) => ({
-      cart: state.cart.map((elem) => {
-        // Se 01
-        if (!bool && elem.id === id) {
-          return { ...elem, quant: elem.quant - 1 };
+      cart: state.cart.map((product) => {
+        // Se for Subtração/False e o elem for igual ao id então...
+        if (!addOrDel && product.id === id) {
+          return { ...product, quant: product.quant - 1 };
         }
-        // Se 02
-        if (bool && elem.id === id) {
-          return { ...elem, quant: elem.quant + 1 };
+        // Se for Adição/True e o elem for igual ao id então..
+        if (addOrDel && product.id === id) {
+          return { ...product, quant: product.quant + 1 };
         }
-        // Se 03
-        return elem;
+        // Se não tiver nenhuma opção retorna o product
+        return product;
       }),
     }));
   }

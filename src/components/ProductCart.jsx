@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class ProductCart extends Component {
   render() {
-    const { product: { title, quant, id, available, thumbnail } } = this.props;
+    const { product: { title, quant, id, price, available, thumbnail } } = this.props;
     // Recebo a props com a função updateQuant do componente ShoppingCart
     const { updateQuant } = this.props;
 
@@ -13,6 +13,8 @@ class ProductCart extends Component {
 
     return (
       <div className="cart-item">
+        <img src={ thumbnail } alt={ title } />
+        <p data-testid="shopping-cart-product-name">{title}</p>
         <div className="quant-btns">
           <button
             type="button"
@@ -31,9 +33,11 @@ class ProductCart extends Component {
           >
             -
           </button>
+          <span>
+            R$
+            { (quant * price).toFixed(2) }
+          </span>
         </div>
-        <img src={ thumbnail } alt={ title } />
-        <p data-testid="shopping-cart-product-name">{title}</p>
       </div>
     );
   }
