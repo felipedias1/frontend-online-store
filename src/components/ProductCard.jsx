@@ -7,7 +7,10 @@ class ProductCard extends Component {
   render() {
     // Recebe a props produto do componente ListProducts e desconstrói o id, title, thumbail
     const { produto: { id, title, thumbnail, price } } = this.props;
+    const { setCart } = this.props;
+
     if (id.length < 1) return 'Nenhum produto encontrado';
+
     return (
       <div className="card-container">
         <Link
@@ -19,17 +22,17 @@ class ProductCard extends Component {
             <p className="product-title">{ title }</p>
             <img src={ thumbnail } alt="" />
             <p className="product-price">{` R$ ${price}`}</p>
-            <div>
-              <button
-                onClick={ () => console.log('Clicou') }
-                type="button"
-                data-testid="product-add-to-cart"
-              >
-                Adicionar ao Carrinho
-              </button>
-            </div>
           </div>
         </Link>
+        <button
+          // O evento click abaixo chama a função setCard que vai ...
+          // ...adicionar o item no state do ListProducs e no localStorage.
+          onClick={ () => setCart({ id, title, price, thumbnail }) }
+          type="button"
+          data-testid="product-add-to-cart"
+        >
+          Adicionar ao Carrinho
+        </button>
       </div>
     );
   }

@@ -4,6 +4,7 @@ import Header from './components/Header';
 import './App.css';
 import Home from './pages/Home';
 import ShoppingCart from './pages/ShoppingCart';
+import Checkout from './pages/Checkout';
 
 class App extends Component {
   constructor(props) {
@@ -11,8 +12,8 @@ class App extends Component {
     this.state = {
       cart: [],
     };
+
     this.setCart = this.setCart.bind(this);
-    this.updateQuant = this.updateQuant.bind(this);
     this.getFromLocalStorage = this.getFromLocalStorage.bind(this);
   }
 
@@ -22,6 +23,18 @@ class App extends Component {
     }
   }
 
+  // Essa função abaixo vai guardar no localStorage os items no carrinho
+  // É prática de mercado guardar itens de carrinho no localStorage
+  setCart(product) {
+    this.setState((state) => ({ cart: [...state.cart, product] }), () => {
+      // Guarda do state do ListProducts.
+      const { cart } = this.state;
+      // Guarda no localStorage caso o usuário abra novamente a página e seus itens ainda continuam no carrinho.
+      localStorage.setItem('cartItems', JSON.stringify(cart));
+    });
+  }
+
+  // Pega os dados que estão no LocalStorage e joga no carrinho
   getFromLocalStorage() {
     const previousCart = JSON.parse(localStorage.getItem('cartItems'));
     this.setState({
@@ -29,25 +42,8 @@ class App extends Component {
     });
   }
 
-  setCart(product) {
-    this.setState((state) => ({ cart: [...state.cart, product] }), () => {
-      const { cart } = this.state;
-      localStorage.setItem('cartItems', JSON.stringify(cart));
-    });
-  }
-
-  updateQuant(id, bool) {
-    this.setState((state) => ({
-      cart: state.cart.map((elem) => {
-        if (!bool && elem.id === id) return { ...elem, quant: elem.quant - 1 };
-        if (bool && elem.id === id) return { ...elem, quant: elem.quant + 1 };
-        return elem;
-      }),
-    }));
-  }
-
   render() {
-    const { cart } = this.state;
+    const { cart, categories } = this.state;
 
     return (
       <BrowserRouter>
@@ -62,12 +58,16 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={ () => <Home /> }
-            // render={ () => <Home setCart={ this.setCart } categories={ categories } /> }
+            render={ () => <Home setCart={ this.setCart } categories={ categories } /> }
+          />
+          <Route
+            exact
+            path="/checkout"
+            render={ () => <Checkout cart={ cart } /> }
           />
           <Route
             path="/cart"
-            render={ () => (<ShoppingCart />) }
+            render={ () => (<ShoppingCart cart={ cart } />) }
           />
         </Switch>
       </BrowserRouter>

@@ -6,14 +6,15 @@ class ListProducts extends Component {
   render() {
     // Recebe a props de Produtos listados do filtro Categorias do componente Home
     const { products } = this.props;
+    const { setCart } = this.props;
     return (
       <section>
         <div className="card-container">
-          {/* <h4>Lista de Produtos</h4> */}
           {products.map((produto) => (
             <ProductCard
               key={ produto.id }
               produto={ produto }
+              setCart={ setCart }
             />
           ))}
         </div>
@@ -24,6 +25,7 @@ class ListProducts extends Component {
 
 ListProducts.propTypes = {
   products: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setCart: PropTypes.func.isRequired,
 };
 
 export default ListProducts;

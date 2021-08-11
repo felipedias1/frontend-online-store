@@ -1,13 +1,64 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import ProductCart from '../components/ProductCart';
 
 class ShoppingCart extends Component {
+  constructor() {
+    super();
+    this.renderList = this.renderList.bind(this);
+    this.renderContent = this.renderContent.bind(this);
+    this.renderIsEmpty = this.renderEmpty.bind(this);
+  }
+
+  renderList() {
+    const { cart, updateQuant } = this.props;
+    return cart.map((product, index) => (
+      <ProductCart
+        updateQuant={ updateQuant }
+        key={ `${product.title} - ${index}` }
+        product={ product }
+      />
+    ));
+  }
+
+  renderContent() {
+    return (
+      <div className="checkout">
+        <h2>Checkout</h2>
+        <div>
+          {this.renderList()}
+        </div>
+        <Link
+          to="/checkout"
+          data-testid="checkout-products"
+          className="btn"
+        >
+          Fechar Carrinho
+        </Link>
+      </div>
+    );
+  }
+
+  renderEmpty() {
+    return (
+      <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
+    );
+  }
+
   render() {
+    const { cart } = this.props;
+
     return (
       <div>
-        <h4 data-testid="shopping-cart-empty-message">Seu carrinho está vazio</h4>
+        { cart.length < 1 ? this.renderEmpty() : this.renderContent() }
       </div>
     );
   }
 }
+
+ShoppingCart.propTypes = {
+  cart: PropTypes.arrayOf,
+}.isRequired;
 
 export default ShoppingCart;
