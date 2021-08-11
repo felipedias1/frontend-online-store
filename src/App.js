@@ -14,8 +14,10 @@ class App extends Component {
       cart: [],
     };
 
+    // Permite que as funções possam ser lidas em todo o componente com o .this
     this.setCart = this.setCart.bind(this);
     this.getFromLocalStorage = this.getFromLocalStorage.bind(this);
+    this.updateQuant = this.updateQuant.bind(this);
   }
 
   componentDidMount() {
@@ -43,6 +45,24 @@ class App extends Component {
     });
   }
 
+  // Função usada no ProducCart onde conforme for clicando nos botões vai sendo alterado o
+  updateQuant(id, bool) {
+    this.setState((state) => ({
+      cart: state.cart.map((elem) => {
+        // Se 01
+        if (!bool && elem.id === id) {
+          return { ...elem, quant: elem.quant - 1 };
+        }
+        // Se 02
+        if (bool && elem.id === id) {
+          return { ...elem, quant: elem.quant + 1 };
+        }
+        // Se 03
+        return elem;
+      }),
+    }));
+  }
+
   render() {
     const { cart, categories } = this.state;
 
@@ -68,7 +88,10 @@ class App extends Component {
           />
           <Route
             path="/cart"
-            render={ () => (<ShoppingCart cart={ cart } />) }
+            render={ () => (<ShoppingCart
+              cart={ cart }
+              updateQuant={ this.updateQuant }
+            />) }
           />
           <Route
             path="/product/:category/:id"

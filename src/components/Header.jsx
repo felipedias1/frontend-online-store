@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 
 class Header extends Component {
   render() {
+    const { cartItems } = this.props;
+    const totalItems = cartItems.reduce((acc, curr) => acc + curr.quant, 0);
+
     return (
       <header className="header-container">
         <div className="title-container">
@@ -17,6 +20,7 @@ class Header extends Component {
           data-testid="shopping-cart-size"
         >
           Carrinho
+          <span style="color:green">{totalItems}</span>
         </Link>
 
       </header>
