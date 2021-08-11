@@ -4,22 +4,30 @@ import { Link } from 'react-router-dom';
 import ProductCart from '../components/ProductCart';
 
 class ShoppingCart extends Component {
-  render() {
-    const { cart } = this.props;
-    console.log(cart);
+  constructor() {
+    super();
+    this.renderList = this.renderList.bind(this);
+    this.renderContent = this.renderContent.bind(this);
+    this.renderIsEmpty = this.renderEmpty.bind(this);
+  }
 
+  renderList() {
+    const { cart, updateQuant } = this.props;
+    return cart.map((product, index) => (
+      <ProductCart
+        updateQuant={ updateQuant }
+        key={ `${product.title} - ${index}` }
+        product={ product }
+      />
+    ));
+  }
+
+  renderContent() {
     return (
       <div className="checkout">
         <h2>Checkout</h2>
         <div>
-          {
-            cart.map((product, index) => (
-              <ProductCart
-                key={ `${product.title} - ${index}` }
-                product={ product }
-              />
-            ))
-          }
+          {this.renderList()}
         </div>
         <Link
           to="/checkout"
@@ -28,6 +36,22 @@ class ShoppingCart extends Component {
         >
           Fechar Carrinho
         </Link>
+      </div>
+    );
+  }
+
+  renderEmpty() {
+    return (
+      <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
+    );
+  }
+
+  render() {
+    const { cart } = this.props;
+
+    return (
+      <div>
+        { cart.length < 1 ? this.renderEmpty() : this.renderContent() }
       </div>
     );
   }

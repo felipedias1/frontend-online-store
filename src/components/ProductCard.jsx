@@ -8,7 +8,9 @@ class ProductCard extends Component {
     // Recebe a props produto do componente ListProducts e desconstrói o id, title, thumbail
     const { produto: { id, title, thumbnail, price } } = this.props;
     const { setCart } = this.props;
+
     if (id.length < 1) return 'Nenhum produto encontrado';
+
     return (
       <div className="card-container">
         <Link

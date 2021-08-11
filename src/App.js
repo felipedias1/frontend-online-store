@@ -14,10 +14,13 @@ class App extends Component {
     };
 
     this.setCart = this.setCart.bind(this);
-    // this.getFromLocalStorage = this.getFromLocalStorage.bind(this);
+    this.getFromLocalStorage = this.getFromLocalStorage.bind(this);
   }
 
   componentDidMount() {
+    if (localStorage.cartItems) {
+      this.getFromLocalStorage();
+    }
   }
 
   // Essa função abaixo vai guardar no localStorage os items no carrinho
@@ -31,7 +34,7 @@ class App extends Component {
     });
   }
 
-  // Pega os dados que estão no LocalStorage
+  // Pega os dados que estão no LocalStorage e joga no carrinho
   getFromLocalStorage() {
     const previousCart = JSON.parse(localStorage.getItem('cartItems'));
     this.setState({

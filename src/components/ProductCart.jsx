@@ -7,7 +7,7 @@ class ProductCart extends Component {
 
     return (
       <div className="cart-item">
-        <p data-testid="shopping-cart-product-name">{title}</p>
+        <p data-testid="shopping-cart-product-name">{ title }</p>
         <img src={ thumbnail } alt={ title } />
       </div>
     );

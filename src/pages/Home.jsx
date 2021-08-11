@@ -47,7 +47,7 @@ class Home extends Component {
     });
   }
 
-  // Após renderizar todo o componente, a função abaixo aparece para listar os produtos, e é chamada no ComponentDidMount
+  // É chamada no handleSubmit
   updateListProducts(products) {
     this.setState({ products });
   }
@@ -61,6 +61,7 @@ class Home extends Component {
   render() {
     const { listCategories, products } = this.state;
     const { setCart } = this.props;
+
     return (
       <section className="main-content">
         <div className="list-category">
