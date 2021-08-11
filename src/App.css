@@ -34,7 +34,7 @@ header {
   transition: transform 0.5s;
 }
 
-button,
+button, 
 .btn {
   background-color: rgb(120, 122, 8);
   border: none;
@@ -49,8 +49,8 @@ button,
   transition: transform 0.2s;
 }
 
-.header-container a:hover,
-button:hover,
+.header-container a:hover, 
+button:hover, 
 .btn:hover {
   font-weight: 600;
   opacity: 100%;
@@ -67,15 +67,14 @@ button:hover,
 
 /* Conteiner que lista as categorias existentes */
 .list-category {
-  /* align-items: flex-start; */
   background-color: rgb(255, 239, 168);
   border-radius: 2px;
   box-shadow: 0 4px 8px black;
   color: black;
   display: flex;
   flex-direction: column;
-  width: auto;
   height: auto;
+  width: auto;
   padding: 10px;
 }
 
@@ -98,7 +97,6 @@ button:hover,
 .products-container {
   background-color: rgb(236, 235, 235);
   border-radius: 2px;
-  /* display: flexbox; */
   flex-flow: row wrap;
   flex-direction: row;
   margin-left: 10px;
@@ -139,8 +137,8 @@ button:hover,
   flex-flow: column wrap;
 }
 
-.cart-item,
-.detail-container,
+.cart-item, 
+.detail-container, 
 form {
   align-items: center;
   border: 1px solid black;
@@ -156,7 +154,7 @@ form {
   width: 80px;
 }
 
-.rating-container input,
+.rating-container input, 
 .rating-container textarea {
   display: flex;
   margin: 10px;
