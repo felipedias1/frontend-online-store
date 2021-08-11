@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ProductCart from '../components/ProductCart';
 
+
 class ShoppingCart extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +14,8 @@ class ShoppingCart extends Component {
   }
 
   renderList() {
+    // Recebe a props do App.js que está na Route de path /cart
+    // É enviado a props da função updateQuant e o cart
     const { cart, updateQuant } = this.props;
     return cart.map((product, index) => (
       <ProductCart

@@ -10,6 +10,7 @@ import Checkout from './pages/Checkout';
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       cart: [],
     };
