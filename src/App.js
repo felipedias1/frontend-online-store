@@ -4,6 +4,7 @@ import Header from './components/Header';
 import './App.css';
 import Home from './pages/Home';
 import ShoppingCart from './pages/ShoppingCart';
+import Checkout from './pages/Checkout';
 
 class App extends Component {
   constructor(props) {
