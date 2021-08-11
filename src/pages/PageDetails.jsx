@@ -40,7 +40,7 @@ class PageDetails extends React.Component {
         </p>
         <button
           type="button"
-          onClick={ () => setCart({ id, title, price, thumbnail }) }
+          onClick={ () => setCart({ id, title, price, quant: 1, thumbnail }) }
           data-testid="product-detail-add-to-cart"
         >
           Adicionar ao carrinho
