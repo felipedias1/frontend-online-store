@@ -11,10 +11,20 @@ class App extends Component {
     this.state = {
       cart: [],
     };
-    this.getFromLocalStorage = this.getFromLocalStorage.bind(this);
   }
 
   componentDidMount() {
+  }
+
+  // Essa função abaixo vai guardar no localStorage os items no carrinho
+  // É prática de mercado guardar itens de carrinho no localStorage
+  setCart(product) {
+    this.setState((state) => ({ cart: [...state.cart, product] }), () => {
+      // Guarda do state do ListProducts.
+      const { cart } = this.state;
+      // Guarda no localStorage caso o usuário abra novamente a página e seus itens ainda continuam no carrinho.
+      localStorage.setItem('cartItems', JSON.stringify(cart));
+    });
   }
 
   render() {
@@ -38,7 +48,7 @@ class App extends Component {
           />
           <Route
             path="/cart"
-            render={ () => (<ShoppingCart />) }
+            render={ () => (<ShoppingCart cart={ cart } />) }
           />
         </Switch>
       </BrowserRouter>
