@@ -22,6 +22,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // Se no localStorage, tiver a chave cartItems, então puxa as informações dela com a função getFromLocalStorage
     if (localStorage.cartItems) {
       this.getFromLocalStorage();
     }
