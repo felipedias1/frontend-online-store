@@ -52,6 +52,8 @@ class ShoppingCart extends Component {
 
     return (
       <div>
+        {/* Se a quantidade do carrinho for menor que 1, então renderiza o vazio... */}
+        {/* ... caso não, renderiza normalmente */}
         { cart.length < 1 ? this.renderEmpty() : this.renderContent() }
       </div>
     );
