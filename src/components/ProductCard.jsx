@@ -7,12 +7,14 @@ class ProductCard extends Component {
   render() {
     // Recebe a props produto do componente ListProducts e desconstrói o id, title, thumbail
     const { produto: { id, title, thumbnail, price } } = this.props;
+    const { produto } = this.props;
+    const categoryId = produto.category_id;
     if (id.length < 1) return 'Nenhum produto encontrado';
     return (
       <div className="card-container">
         <Link
           key={ `${id} - ${title}` }
-          to={ `/product/${id}` }
+          to={ `/product/${categoryId}/${id}` }
           data-testid="product-detail-link"
         >
           <div data-testid="product" className="product-card">
