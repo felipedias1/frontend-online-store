@@ -46,6 +46,11 @@ class App extends Component {
             render={ () => <Home setCart={ this.setCart } categories={ categories } /> }
           />
           <Route
+            exact
+            path="/checkout"
+            render={ () => <Checkout cart={ cart } /> }
+          />
+          <Route
             path="/cart"
             render={ () => (<ShoppingCart cart={ cart } />) }
           />
