@@ -47,6 +47,7 @@ class Home extends Component {
     });
   }
 
+  // Após renderizar todo o componente, a função abaixo aparece para listar os produtos, e é chamada no ComponentDidMount
   updateListProducts(products) {
     this.setState({ products });
   }
