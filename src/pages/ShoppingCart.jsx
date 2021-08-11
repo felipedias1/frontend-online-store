@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import ProductCart from '../components/ProductCart';
 
 class ShoppingCart extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
     this.renderList = this.renderList.bind(this);
     this.renderContent = this.renderContent.bind(this);
     this.renderIsEmpty = this.renderEmpty.bind(this);

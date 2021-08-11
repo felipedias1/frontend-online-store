@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 class Header extends Component {
   render() {
     const { cartItems } = this.props;
+
+    // Faz um reduce para pegar a quantidade de itens no carrinho
     const totalItems = cartItems.reduce((acc, curr) => acc + curr.quant, 0);
 
     return (
@@ -20,7 +22,7 @@ class Header extends Component {
           data-testid="shopping-cart-size"
         >
           Carrinho
-          <span style={ {color: "red"} }>{totalItems}</span>
+          <span style={ { color: 'black' } }> [ { totalItems } ]</span>
         </Link>
 
       </header>
