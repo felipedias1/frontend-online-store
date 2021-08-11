@@ -7,7 +7,7 @@ class ProductCart extends Component {
     // Recebo a props com a função updateQuant do componente ShoppingCart
     const { updateQuant } = this.props;
 
-    // Verifico o tamanho e quantidaed da quantidade
+    // Verifico o tamanho e quantidade da quantidade
     const checkLength = quant <= 0 ? null : true;
     const checkQuant = quant >= available;
 
@@ -32,8 +32,8 @@ class ProductCart extends Component {
             -
           </button>
         </div>
-        <p data-testid="shopping-cart-product-name">{title}</p>
         <img src={ thumbnail } alt={ title } />
+        <p data-testid="shopping-cart-product-name">{title}</p>
       </div>
     );
   }
