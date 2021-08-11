@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ProductCart from '../components/ProductCart';
 
-
 class ShoppingCart extends Component {
   constructor(props) {
     super(props);

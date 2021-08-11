@@ -35,7 +35,9 @@ class ProductCart extends Component {
           </button>
           {/* Adicionando price para cada item e realizando multiplicação devida */}
           <span>
+            {'   '}
             R$
+            {' '}
             { (quant * price).toFixed(2) }
           </span>
         </div>
