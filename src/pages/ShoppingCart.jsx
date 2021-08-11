@@ -6,6 +6,7 @@ import ProductCart from '../components/ProductCart';
 class ShoppingCart extends Component {
   render() {
     const { cart } = this.props;
+    console.log(cart);
 
     return (
       <div className="checkout">
