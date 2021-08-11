@@ -20,7 +20,7 @@ class Header extends Component {
           data-testid="shopping-cart-size"
         >
           Carrinho
-          <span style="color:green">{totalItems}</span>
+          <span style={ {color: "red"} }>{totalItems}</span>
         </Link>
 
       </header>
