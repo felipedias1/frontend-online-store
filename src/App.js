@@ -10,15 +10,20 @@ import Checkout from './pages/Checkout';
 class App extends Component {
   constructor(props) {
     super(props);
+
+    // Inicia o state com um array cart que servirá para adicionar os itens do carrinho
     this.state = {
       cart: [],
     };
 
+    // Permite que as funções possam ser lidas em todo o componente com o .this
     this.setCart = this.setCart.bind(this);
     this.getFromLocalStorage = this.getFromLocalStorage.bind(this);
+    this.updateQuant = this.updateQuant.bind(this);
   }
 
   componentDidMount() {
+    // Se no localStorage, tiver a chave cartItems, então puxa as informações dela com a função getFromLocalStorage
     if (localStorage.cartItems) {
       this.getFromLocalStorage();
     }
@@ -41,6 +46,26 @@ class App extends Component {
     this.setState({
       cart: previousCart,
     });
+  }
+
+  // Função usada no ProducCart onde conforme for clicando nos botões vai sendo alterado
+  // id = proprio id do produto
+  // bool = identificador se vai adicionar(true) ou reduzir(false)
+  updateQuant(id, addOrDel) {
+    this.setState((state) => ({
+      cart: state.cart.map((product) => {
+        // Se for Subtração/False e o elem for igual ao id então...
+        if (!addOrDel && product.id === id) {
+          return { ...product, quant: product.quant - 1 };
+        }
+        // Se for Adição/True e o elem for igual ao id então..
+        if (addOrDel && product.id === id) {
+          return { ...product, quant: product.quant + 1 };
+        }
+        // Se não tiver nenhuma opção retorna o product
+        return product;
+      }),
+    }));
   }
 
   render() {
@@ -68,7 +93,10 @@ class App extends Component {
           />
           <Route
             path="/cart"
-            render={ () => (<ShoppingCart cart={ cart } />) }
+            render={ () => (<ShoppingCart
+              cart={ cart }
+              updateQuant={ this.updateQuant }
+            />) }
           />
           <Route
             path="/product/:category/:id"

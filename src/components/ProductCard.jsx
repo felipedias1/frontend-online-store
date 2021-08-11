@@ -29,7 +29,7 @@ class ProductCard extends Component {
         <button
           // O evento click abaixo chama a função setCard que vai ...
           // ...adicionar o item no state do ListProducs e no localStorage.
-          onClick={ () => setCart({ id, title, price, thumbnail }) }
+          onClick={ () => setCart({ id, title, price, quant: 1, thumbnail }) }
           type="button"
           data-testid="product-add-to-cart"
         >
