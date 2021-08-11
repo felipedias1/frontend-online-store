@@ -20,6 +20,7 @@ class ShoppingCart extends Component {
     // Percorro o cart com o map aproveitando o elemento product e o index
     return cart.map((product, index) => (
       // Executo o componente ProductCart para cada Cart encontrado
+      // Passo a função updateQuant como props para a ProductCart
       <ProductCart
         updateQuant={ updateQuant }
         key={ `${product.title} - ${index}` }
