@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { getProductsFromCategoryAndQuery } from '../services/api';
+import Form from '../components/Form';
 
 class PageDetails extends React.Component {
   constructor(props) {
@@ -33,6 +34,8 @@ class PageDetails extends React.Component {
     // setCart recebido pela props está no App.js
     const { setCart } = this.props;
     const { item: { id, title, thumbnail, price } } = this.state;
+    // let star = 3;
+    const star = this.item;
     return (
       <div>
         {/* <button type="button" onClick={ this.searchId }>olá</button> */}
@@ -42,6 +45,9 @@ class PageDetails extends React.Component {
           R$
           {price}
         </p>
+        <p>
+          {star}
+        </p>
         <button
           type="button"
           // Ao acionar o evento onClick é passado à função setCart os parametros abaixo
@@ -50,6 +56,7 @@ class PageDetails extends React.Component {
         >
           Adicionar ao carrinho
         </button>
+        <Form />
       </div>
     );
   }
