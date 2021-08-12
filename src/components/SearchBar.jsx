@@ -38,6 +38,7 @@ class SearchBar extends Component {
         <button
           data-testid="query-button"
           type="button"
+          // Quando o evento click for acionado, é executado a função handleSubmit passando como parametro de procura o inputSearch
           onClick={ () => handleSubmit(inputSearch) }
         >
           Enviar
