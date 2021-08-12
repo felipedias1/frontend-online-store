@@ -81,6 +81,7 @@ export default class BuyerReview extends Component {
             name="address"
             maxLength="50"
             value={ address }
+            // Cada vez que o usuário digitar algo, roda a função handleChange e o dado é colocado no state
             onChange={ (event) => this.handleChange(event) }
             data-testid="checkout-address"
           />
