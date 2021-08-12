@@ -42,7 +42,7 @@ class ShoppingCart extends Component {
         </div>
         <p>
           Valor total do carrinho:
-          <span style={{fontWeight: "bold"}}>
+          <span style={ { fontWeight: 'bold' } }>
             R$
             { ' ' }
             {cart.reduce((a, b) => {
