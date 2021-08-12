@@ -11,6 +11,7 @@ class Form extends Component {
       comment: '',
     };
 
+
     this.handleChange = this.handleChange.bind(this);
     this.registerLocalStorage = this.registerLocalStorage.bind(this);
   }

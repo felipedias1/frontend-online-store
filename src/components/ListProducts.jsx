@@ -4,7 +4,7 @@ import ProductCard from './ProductCard';
 
 class ListProducts extends Component {
   render() {
-    // Recebe a props de Produtos listados do filtro Categorias do componente Home
+    // Recebe a props de produtos listados do filtro Categorias do componente Home
     const { products } = this.props;
     const { setCart } = this.props;
     return (
