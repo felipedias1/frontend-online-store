@@ -18,8 +18,10 @@ class ProductCard extends Component {
 
     const { produto } = this.props;
     const categoryId = produto.category_id;
+    // Recebe a função setCart que está no App.js como props
     const { setCart } = this.props;
 
+    // Se o tamanho do id for menor que 1 já retorna que não foi encontrado nenhum produto
     if (id.length < 1) return 'Nenhum produto encontrado';
 
     return (
