@@ -27,6 +27,7 @@ class PageDetails extends React.Component {
     // const { produto: { title, thumbnail} } = this.props;
     // const { produto } = this.props;
     // const categoryId = produto.category_id;
+    // setCart recebido pela props está no App.js
     const { setCart } = this.props;
     const { item: { id, title, thumbnail, price } } = this.state;
     return (
