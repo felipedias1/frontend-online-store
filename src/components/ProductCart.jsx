@@ -20,6 +20,7 @@ class ProductCart extends Component {
             type="button"
             data-testid="product-increase-quantity"
             onClick={ () => updateQuant(id, true) }
+            // Se o item não tiver disponibilidade de quantidade então desativa o botão
             disabled={ checkQuant }
           >
             +
@@ -29,6 +30,7 @@ class ProductCart extends Component {
             type="button"
             onClick={ () => updateQuant(id, false) }
             data-testid="product-decrease-quantity"
+            // Se a quantidade for null então desativa o botão por indisponibilidade de item
             disabled={ !checkLength }
           >
             -
