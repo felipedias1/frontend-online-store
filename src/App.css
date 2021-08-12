@@ -123,10 +123,23 @@ button, .btn {
   color: black;
 }
 
-.card-container {
-  align-items: auto;
+.card-container a {
+  /* align-items: center; */
   display: flex;
-  flex-flow: row wrap;
+  justify-items: flex-start;
+  /* flex-direction: row; */
+  /* justify-content: flex-start; */
+  /* flex-flow: row wrap; */
+}
+
+/* .card-container a button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+} */
+
+#comment {
+  resize: none;
 }
 
 .checkout {
