@@ -67,6 +67,7 @@ class ShoppingCart extends Component {
     );
   }
 
+  // Essa opção abaixo irá renderizar caso o carrinho esteja vazio, a checagem vai ser usando o length do cart
   renderEmpty() {
     return (
       <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
