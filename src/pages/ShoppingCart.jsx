@@ -40,11 +40,17 @@ class ShoppingCart extends Component {
         <div>
           { this.renderList() }
         </div>
-        <p>Valor total do carrinho:</p>
-        {cart.reduce((a, b) => {
-          a += b.price * b.quant;
-          return a;
-        }, magicNumber)}
+        <p>
+          Valor total do carrinho:
+          <span style={{fontWeight: "bold"}}>
+            R$
+            { ' ' }
+            {cart.reduce((a, b) => {
+              a += b.price * b.quant;
+              return a;
+            }, magicNumber).toFixed(2)}
+          </span>
+        </p>
         <Link
           to="/checkout"
           data-testid="checkout-products"
