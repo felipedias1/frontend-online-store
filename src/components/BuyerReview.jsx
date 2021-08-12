@@ -44,6 +44,7 @@ export default class BuyerReview extends Component {
             placeholder="Email"
             name="email"
             value={ email }
+            // Cada vez que o usuário digitar algo, roda a função handleChange e o dado é colocado no state
             onChange={ (event) => this.handleChange(event) }
             data-testid="checkout-email"
           />
