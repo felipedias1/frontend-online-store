@@ -12,9 +12,12 @@ class Checkout extends Component {
 
     return (
       <div>
-        {/* Chama o componente de Revisão */}
+        {/* Chama o componente de Revisão do carrinho */}
         <ProductsReview cart={ cart } />
-
+        {/* Chama o componente de Revisão do comprador */}
+        <BuyerReview />
+        {/* Chama o componente de método de pagamento */}
+        <PaymentMethod />
       </div>
     );
   }
