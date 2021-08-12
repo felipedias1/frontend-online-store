@@ -40,6 +40,7 @@ class ShoppingCart extends Component {
       <div className="checkout">
         <h2>Checkout</h2>
         <div>
+          {/* Chama a função renderList que está dentro da classe */}
           { this.renderList() }
         </div>
         <p>
