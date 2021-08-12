@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-// Este componente é chamado pela Home, para listar as categorias
 class ProductCard extends Component {
   render() {
     // Recebe a props produto do componente ListProducts e desconstrói o id, title, thumbail

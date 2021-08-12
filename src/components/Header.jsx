@@ -21,6 +21,7 @@ class Header extends Component {
           to="/cart"
           data-testid="shopping-cart-size"
         >
+          {/* <img src="../shopping-cart-solid.svg" alt="" /> */}
           Carrinho
           <span style={ { color: 'black' } }>
             {' '}
