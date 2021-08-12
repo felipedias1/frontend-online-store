@@ -26,6 +26,7 @@ class SearchBar extends Component {
       <div>
         <label htmlFor="input">
           <input
+            className="input-search"
             name="input"
             value={ inputSearch }
             data-testid="query-input"

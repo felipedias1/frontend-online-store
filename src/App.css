@@ -154,3 +154,7 @@ button, .btn {
   display: flex;
   margin: 10px;
 }
+
+.input-search {
+  border-radius: 4px;
+}
