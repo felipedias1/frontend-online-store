@@ -6,8 +6,11 @@ class PageDetails extends React.Component {
   constructor(props) {
     super(props);
 
+    // Com a props recebida do constructor (match/history/location) pego a match->params e desconstruo para pegar o id
+    const { id } = props.match.params;
     this.state = {
-      item: '',
+      product: [],
+      productID: id, // Guardo no state o id recebido pela props do constructor
     };
 
     // Permite o uso das funções abaixo para serem utilizadas em toda a classe com o .this
@@ -20,18 +23,20 @@ class PageDetails extends React.Component {
   }
 
   async searchId() {
-    const { match: { params: { id, category } } } = this.props;
-    const { results } = await getProductsFromCategoryAndQuery(category);
-    const valor = results.find((result) => result.id === id);
-    this.setState({ item: valor });
+    // Desconstruo o state para pegar o productID
+    const { productID } = this.state;
+    // A variável response irá guardar o fetch de procura pelo ID do produto
+    const response = await fetch(`https://api.mercadolibre.com/items/${productID}`);
+    const selectedProduct = await response.json();
+    this.setState({
+      product: selectedProduct,
+    });
   }
 
   render() {
-    // const { produto: { title, thumbnail} } = this.props;
-    // const { produto } = this.props;
-    // const categoryId = produto.category_id;
     // setCart recebido pela props está no App.js
     const { setCart } = this.props;
+    
     const { item: { id, title, thumbnail, price } } = this.state;
     return (
       <div>

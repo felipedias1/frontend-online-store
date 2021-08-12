@@ -20,6 +20,7 @@ class BuyerReview extends Component {
 
   // Função que quando for digitar algo o state do campo é alterado de imediato na state
   handleChange(event) {
+    console.log(event);
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
