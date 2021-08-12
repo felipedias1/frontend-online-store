@@ -7,6 +7,7 @@ class ShoppingCart extends Component {
   constructor(props) {
     super(props);
 
+    // Permite o uso das funções abaixo para serem utilizadas em toda a classe com o .this
     this.renderList = this.renderList.bind(this);
     this.renderContent = this.renderContent.bind(this);
     this.renderIsEmpty = this.renderEmpty.bind(this);
@@ -54,6 +55,7 @@ class ShoppingCart extends Component {
             }, initialValue).toFixed(2)}
           </span>
         </p>
+        {/* Cria o link abaixo para Fechar Carrinho e ir para a finalização da compra */}
         <Link
           to="/checkout"
           data-testid="checkout-products"
