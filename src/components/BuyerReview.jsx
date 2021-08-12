@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 
 export default class BuyerReview extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    // Adicionando state inicial
     this.state = {
-      email: '',
-      cpf: '',
-      fullName: '',
-      phone: '',
-      cep: '',
-      address: '',
+      email: '', // joao@email.com.br
+      cpf: '', // 123.456.789-01
+      fullName: '', // João do Brasil
+      phone: '', // (11) 91234-5678
+      cep: '', // 12345-67
+      address: '', // Rua Central do Brasil, nr. 123
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -69,6 +71,7 @@ export default class BuyerReview extends Component {
           type="text"
           placeholder="Endereço"
           name="address"
+          maxLength="50"
           value={ address }
           onChange={ (event) => this.handleChange(event) }
           data-testid="checkout-address"
