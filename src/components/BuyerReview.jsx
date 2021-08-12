@@ -23,6 +23,7 @@ export default class BuyerReview extends Component {
   }
 
   render() {
+    // Desconstroi o state
     const { email, cpf, fullName, phone, cep, address } = this.state;
     return (
 
