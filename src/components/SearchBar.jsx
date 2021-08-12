@@ -21,7 +21,9 @@ class SearchBar extends Component {
   render() {
     // Desestrutura a função handleSubmit que está na App.js e que veio de props da page Home
     const { handleSubmit } = this.props;
+    // Desestrutura o state pegando o inputSearch
     const { inputSearch } = this.state;
+
     return (
       <div>
         <label htmlFor="input">
