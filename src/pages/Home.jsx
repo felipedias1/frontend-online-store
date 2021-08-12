@@ -66,10 +66,6 @@ class Home extends Component {
     return (
       <section className="main-content">
         <div className="list-category">
-          {/* Executa o componente SearchBar aparecendo na section da... */}
-          {/* ...listagem de produtos */}
-          <SearchBar handleSubmit={ this.handleSubmit } />
-
           <h4>Categorias:</h4>
           { /* Lista as categorias, e chama o componente Category... */}
           {/* ...a cada categoria encontrada */}
@@ -82,6 +78,9 @@ class Home extends Component {
           ))}
         </div>
         <section className="products-container">
+          {/* Executa o componente SearchBar aparecendo na section da... */}
+          {/* ...listagem de produtos */}
+          <SearchBar handleSubmit={ this.handleSubmit } />
           <ListProducts setCart={ setCart } products={ products } />
         </section>
       </section>
