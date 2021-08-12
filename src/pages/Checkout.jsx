@@ -6,10 +6,6 @@ import BuyerReview from '../components/BuyerReview';
 import PaymentMethod from '../components/PaymentMethod';
 
 class Checkout extends Component {
-  emptyCart() {
-    console.log('finalizar compra');
-  }
-
   render() {
     // Recebe a props cart vinda do App.js com as informações atuais do carrinho
     const { cart } = this.props;
@@ -30,13 +26,16 @@ class Checkout extends Component {
         {/* Salta um espaçamento entre os componentes */}
         <br />
         {/* Criando link para finalização da compra */}
-        <Link
-          to="/"
-          onClick={ this.emptyCart }
-          className="btn btn-center"
-        >
-          Finalizar
-        </Link>
+        <div className="btn-div-finish">
+          <Link
+            to="/"
+            onClick={ this.emptyCart }
+            className="btn btn-center btn-finish"
+          >
+            Finalizar
+          </Link>
+        </div>
+        <br />
       </div>
     );
   }
