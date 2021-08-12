@@ -41,6 +41,7 @@ class Home extends Component {
     this.updateListProducts(results);
   }
 
+  // Tem a função de que cada palavra 
   onChangeCategory({ target: { value } }) {
     this.setState({ category: value }, () => {
       this.handleSubmit();
