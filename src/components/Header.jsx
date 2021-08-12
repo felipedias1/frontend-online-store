@@ -30,7 +30,10 @@ class Header extends Component {
               src="shopping_cart_black_24dp.svg"
               alt=""
             />
-            <span style={ { color: 'black' } }>
+            <span
+              style={ { color: 'black' } }
+              className="show-qtd"
+            >
               {' '}
               [
               {' '}
