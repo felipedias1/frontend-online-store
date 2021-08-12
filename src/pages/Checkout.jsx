@@ -15,7 +15,7 @@ class Checkout extends Component {
     const { cart } = this.props;
 
     return (
-      <div>
+      <div className="screen-checkout">
         {/* Chama o componente de Revisão do carrinho */}
         <ProductsReview cart={ cart } />
         {/* Salta um espaçamento entre os componentes */}
@@ -30,7 +30,13 @@ class Checkout extends Component {
         {/* Salta um espaçamento entre os componentes */}
         <br />
         {/* Criando link para finalização da compra */}
-        <Link to="/" onClick={ this.emptyCart }>Finalizar</Link>
+        <Link
+          to="/"
+          onClick={ this.emptyCart }
+          className="btn btn-center"
+        >
+          Finalizar
+        </Link>
       </div>
     );
   }
