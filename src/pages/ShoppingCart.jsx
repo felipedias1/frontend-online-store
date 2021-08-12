@@ -14,7 +14,7 @@ class ShoppingCart extends Component {
 
   renderList() {
     // Recebe a props do App.js que está na Route de path /cart
-    // É enviado a props da função updateQuant e o cart com os itens no carrinho
+    // É recebido a props da função updateQuant e o cart com os itens no carrinho
     const { cart, updateQuant } = this.props;
     // Percorro o cart com o map aproveitando o elemento product e o index
     return cart.map((product, index) => (
@@ -29,12 +29,28 @@ class ShoppingCart extends Component {
   }
 
   renderContent() {
+    // Recebe a props cart com os itens do carrinho
+    const { cart } = this.props;
+    // Valor inicial do reduce para fazer início da somatória
+    const magicNumber = 0;
+
     return (
       <div className="checkout">
         <h2>Checkout</h2>
         <div>
           { this.renderList() }
         </div>
+        <p>
+          Valor total do carrinho:
+          <span style={ { fontWeight: 'bold' } }>
+            R$
+            { ' ' }
+            {cart.reduce((a, b) => {
+              a += b.price * b.quant;
+              return a;
+            }, magicNumber).toFixed(2)}
+          </span>
+        </p>
         <Link
           to="/checkout"
           data-testid="checkout-products"
