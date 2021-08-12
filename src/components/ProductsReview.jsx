@@ -14,7 +14,7 @@ class ProductsReview extends Component {
 
         {/* Percorre a props cart com o map listando os produtos na tela */}
         {cart.map((product) => (
-          <div key={ product.id }>
+          <div className="cart-item" key={ product.id }>
             <img src={ product.thumbnail } alt="product" />
             <p>{product.title}</p>
             <p>{product.price * product.quant}</p>
