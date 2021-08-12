@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class PaymentMethod extends Component {
+class PaymentMethod extends Component {
   render() {
     // Renderização simples de input type radio simulando opção bancária
     return (
@@ -40,3 +40,5 @@ export default class PaymentMethod extends Component {
     );
   }
 }
+
+export default PaymentMethod;

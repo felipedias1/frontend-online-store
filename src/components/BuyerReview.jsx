@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class BuyerReview extends Component {
+class BuyerReview extends Component {
   constructor(props) {
     super(props);
 
@@ -90,3 +90,5 @@ export default class BuyerReview extends Component {
     );
   }
 }
+
+export default BuyerReview;
