@@ -6,9 +6,15 @@ import { Link } from 'react-router-dom';
 class ProductCard extends Component {
   render() {
     // Recebe a props produto do componente ListProducts e desconstrói o id, title, thumbail
-    const { produto: { id, title, thumbnail, price } } = this.props;
+    // Pegamos tambem informação de shipping/frete e available quantity
+    const {
+      produto: { id, title, thumbnail, price,
+        shipping: { free_shipping: freeShipping },
+        available_quantity: available,
+      },
+    } = this.props;
+
     const { produto } = this.props;
-    const { shipping: { free_shipping: freeShipping }, available_quantity: available } = this.props;
     const categoryId = produto.category_id;
     const { setCart } = this.props;
 
