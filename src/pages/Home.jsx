@@ -60,7 +60,9 @@ class Home extends Component {
   }
 
   render() {
+    // Desestrutura o state pegando o listCategories e products
     const { listCategories, products } = this.state;
+    // Recebe a props com a função setCart que está no App.js
     const { setCart } = this.props;
 
     return (
