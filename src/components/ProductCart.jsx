@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 class ProductCart extends Component {
   render() {
+    // Recebe a props e a desconstroi
     const { product: { title, quant, id, price, available, thumbnail } } = this.props;
     // Recebo a props com a função updateQuant do componente ShoppingCart
     const { updateQuant } = this.props;
