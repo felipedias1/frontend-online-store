@@ -16,6 +16,7 @@ export default class BuyerReview extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  // Função que quando for digitar algo o state do campo é alterado de imediato na state
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
