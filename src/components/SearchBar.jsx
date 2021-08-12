@@ -19,12 +19,17 @@ class SearchBar extends Component {
   }
 
   render() {
+    // Desestrutura a função handleSubmit que está na App.js e que veio de props da page Home
     const { handleSubmit } = this.props;
+    // Desestrutura o state pegando o inputSearch
     const { inputSearch } = this.state;
+
     return (
-      <div>
+      <div className="show-search-bar">
+        {/* Criação da Barra de Procura de Produtos */}
         <label htmlFor="input">
           <input
+            className="input-search"
             name="input"
             value={ inputSearch }
             data-testid="query-input"
@@ -36,6 +41,7 @@ class SearchBar extends Component {
         <button
           data-testid="query-button"
           type="button"
+          // Quando o evento click for acionado, é executado a função handleSubmit passando como parametro de procura o inputSearch
           onClick={ () => handleSubmit(inputSearch) }
         >
           Enviar

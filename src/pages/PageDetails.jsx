@@ -5,9 +5,12 @@ import { getProductsFromCategoryAndQuery } from '../services/api';
 class PageDetails extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       item: '',
     };
+
+    // Permite o uso das funções abaixo para serem utilizadas em toda a classe com o .this
     this.searchId = this.searchId.bind(this);
     // this.testFun = this.testFun.bind(this);
   }
@@ -27,6 +30,7 @@ class PageDetails extends React.Component {
     // const { produto: { title, thumbnail} } = this.props;
     // const { produto } = this.props;
     // const categoryId = produto.category_id;
+    // setCart recebido pela props está no App.js
     const { setCart } = this.props;
     const { item: { id, title, thumbnail, price } } = this.state;
     return (
@@ -40,6 +44,7 @@ class PageDetails extends React.Component {
         </p>
         <button
           type="button"
+          // Ao acionar o evento onClick é passado à função setCart os parametros abaixo
           onClick={ () => setCart({ id, title, price, quant: 1, thumbnail }) }
           data-testid="product-detail-add-to-cart"
         >
@@ -49,7 +54,9 @@ class PageDetails extends React.Component {
     );
   }
 }
+
 PageDetails.propTypes = {
   match: PropTypes.object,
 }.isRequired;
+
 export default PageDetails;

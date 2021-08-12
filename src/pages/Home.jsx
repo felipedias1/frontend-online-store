@@ -41,8 +41,10 @@ class Home extends Component {
     this.updateListProducts(results);
   }
 
+  // Tem a função de que cada alteração da categoria, ou seja, cada vez que o usuário clicar em uma opção de categoria, é executado o submit automaticamente
   onChangeCategory({ target: { value } }) {
     this.setState({ category: value }, () => {
+      // Função que irá executar a procura
       this.handleSubmit();
     });
   }
@@ -59,16 +61,14 @@ class Home extends Component {
   }
 
   render() {
+    // Desestrutura o state pegando o listCategories e products
     const { listCategories, products } = this.state;
+    // Recebe a props com a função setCart que está no App.js
     const { setCart } = this.props;
 
     return (
       <section className="main-content">
         <div className="list-category">
-          {/* Executa o componente SearchBar aparecendo na section da... */}
-          {/* ...listagem de produtos */}
-          <SearchBar handleSubmit={ this.handleSubmit } />
-
           <h4>Categorias:</h4>
           { /* Lista as categorias, e chama o componente Category... */}
           {/* ...a cada categoria encontrada */}
@@ -81,6 +81,9 @@ class Home extends Component {
           ))}
         </div>
         <section className="products-container">
+          {/* Executa o componente SearchBar aparecendo na section da... */}
+          {/* ...listagem de produtos */}
+          <SearchBar handleSubmit={ this.handleSubmit } />
           <ListProducts setCart={ setCart } products={ products } />
         </section>
       </section>

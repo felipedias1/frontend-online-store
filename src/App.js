@@ -73,6 +73,7 @@ class App extends Component {
 
     return (
       <BrowserRouter>
+        {/* Chama o componente Header e passa a props com os itens no carrinho */}
         <Header cartItems={ cart } />
         <p className="cart-btn">
           <Link data-testid="shopping-cart-button" to="/cart">
@@ -80,6 +81,7 @@ class App extends Component {
           </Link>
         </p>
 
+        {/* Inicia o switch das rotas que o App vai ter */}
         <Switch>
           <Route
             exact

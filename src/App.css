@@ -71,6 +71,7 @@ button, .btn {
   display: flex;
   flex-direction: column;
   height: auto;
+  min-width: 250px;
   padding: 10px;
   width: auto;
 }
@@ -152,4 +153,20 @@ button, .btn {
 .rating-container input, .rating-container textarea {
   display: flex;
   margin: 10px;
+}
+
+.input-search {
+  border-radius: 6px;
+  height: 28px;
+  width: 80%;
+}
+
+.div-img-cart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-qtd {
+  align-self: flex-end;
+  font-size: 14px;
 }
