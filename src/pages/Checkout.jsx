@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ProductsReview from '../components/ProductsReview';
 import BuyerReview from '../components/BuyerReview';
+import PaymentMethod from '../components/PaymentMethod';
 
 class Checkout extends Component {
   emptyCart() {
