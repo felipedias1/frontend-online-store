@@ -20,6 +20,9 @@ class Checkout extends Component {
         <BuyerReview />
         {/* Chama o componente de método de pagamento */}
         <PaymentMethod />
+
+        {/* Criando link para finalização da compra */}
+        <Link to="/" onClick={ this.emptyCart }>Finalizar</Link>
       </div>
     );
   }
