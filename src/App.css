@@ -161,14 +161,11 @@ button, .btn {
 
 .div-img-cart {
   display: flex;
-}
-
-.img-cart {
-  align-content: space-between;
+  justify-content: space-between;
 }
 
 .show-qtd {
   /* align-content: center; */
-  align-items: center;
   font-size: 14px;
+  align-self: flex-end;
 }
