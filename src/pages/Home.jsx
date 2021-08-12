@@ -41,7 +41,7 @@ class Home extends Component {
     this.updateListProducts(results);
   }
 
-  // Tem a função de que cada palavra 
+  // Tem a função de que cada alteração da categoria, ou seja, cada vez que o usuário clicar em uma opção de categoria, é executado o submit automaticamente
   onChangeCategory({ target: { value } }) {
     this.setState({ category: value }, () => {
       this.handleSubmit();
