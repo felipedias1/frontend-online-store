@@ -28,17 +28,20 @@ class ProductCard extends Component {
       <div className="card-container">
         <Link
           key={ `${id} - ${title}` }
+          // Faz o link to do produto com sua categoria e id
           to={ `/product/${categoryId}/${id}` }
           data-testid="product-detail-link"
         >
           <div data-testid="product" className="product-card">
             <p className="product-title">{ title }</p>
             <img src={ thumbnail } alt="{ title }" />
+            {/* Adiciona no card a informação do Frete Gratis quando houver */}
             {freeShipping && (
               <p data-testid="free-shipping">
                 Frete grátis
               </p>
             )}
+            {/* Informa o preço do produto */}
             <p className="product-price">{` R$ ${price}`}</p>
           </div>
         </Link>
