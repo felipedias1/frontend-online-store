@@ -5,7 +5,7 @@ import { getProductsFromCategoryAndQuery } from '../services/api';
 class PageDetails extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       item: '',
     };

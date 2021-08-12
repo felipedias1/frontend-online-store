@@ -25,7 +25,8 @@ class SearchBar extends Component {
     const { inputSearch } = this.state;
 
     return (
-      <div>
+      <div className="show-search-bar">
+        {/* Criação da Barra de Procura de Produtos */}
         <label htmlFor="input">
           <input
             className="input-search"
