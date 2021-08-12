@@ -25,6 +25,7 @@ export default class PaymentMethod extends Component {
             id="boleto"
             name="payment"
             value="visa"
+            // Cada vez que o usuário alterar opção, o value é colocado no state
             onChange={ (event) => this.handleChange(event) }
           />
         </label>
