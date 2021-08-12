@@ -158,3 +158,11 @@ button, .btn {
 .input-search {
   border-radius: 4px;
 }
+
+.div-img-cart {
+  display: flex;
+}
+
+.img-cart {
+  align-content: space-between;
+}

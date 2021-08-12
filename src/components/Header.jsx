@@ -24,16 +24,21 @@ class Header extends Component {
           to="/cart"
           data-testid="shopping-cart-size"
         >
-          {/* <img src="../shopping-cart-solid.svg" alt="" /> */}
-          Carrinho
-          <span style={ { color: 'black' } }>
-            {' '}
-            [
-            {' '}
-            { totalItems }
-            {' '}
-            ]
-          </span>
+          <div className="div-img-cart">
+            <img
+              className="img-cart"
+              src="shopping_cart_black_24dp.svg"
+              alt=""
+            />
+            <span style={ { color: 'black' } }>
+              {' '}
+              [
+              {' '}
+              { totalItems }
+              {' '}
+              ]
+            </span>
+          </div>
         </Link>
 
       </header>
