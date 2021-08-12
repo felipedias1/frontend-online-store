@@ -134,7 +134,7 @@ button, .btn {
   flex-flow: column wrap;
 }
 
-.cart-item, .detail-container, form {
+.cart-item, .detail-container, .checkout-payment-method, form {
   align-items: center;
   border: 1px solid black;
   border-radius: 10px;

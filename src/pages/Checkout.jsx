@@ -18,11 +18,17 @@ class Checkout extends Component {
       <div>
         {/* Chama o componente de Revisão do carrinho */}
         <ProductsReview cart={ cart } />
+        {/* Salta um espaçamento entre os componentes */}
+        <br />
         {/* Chama o componente de Revisão do comprador */}
         <BuyerReview />
+        {/* Salta um espaçamento entre os componentes */}
+        <br />
         {/* Chama o componente de método de pagamento */}
         <PaymentMethod />
 
+        {/* Salta um espaçamento entre os componentes */}
+        <br />
         {/* Criando link para finalização da compra */}
         <Link to="/" onClick={ this.emptyCart }>Finalizar</Link>
       </div>
