@@ -17,14 +17,24 @@ class ProductsReview extends Component {
           <div className="cart-item" key={ product.id }>
             <img src={ product.thumbnail } alt="product" />
             <p>{product.title}</p>
-            <p>{product.price * product.quant}</p>
-            <p>{product.quant}</p>
+            <p>
+              { ' ' }
+              R$
+              { ' ' }
+              {(product.price * product.quant).toFixed(2)}
+            </p>
+            <p>
+              Qtd:
+              {' '}
+              {product.quant}
+            </p>
           </div>
         ))}
 
         <p>
           Valor total do carrinho:
           <span style={ { fontWeight: 'bold' } }>
+            { ' ' }
             R$
             { ' ' }
             {/* Uso o reduce para pegar o valor total do preço do carrinho */}
