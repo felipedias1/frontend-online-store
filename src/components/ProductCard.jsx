@@ -9,7 +9,9 @@ class ProductCard extends Component {
     // Pegamos tambem informação de shipping/frete e available quantity
     const {
       produto: { id, title, thumbnail, price,
+        // Desestruturo o shipping da API que tem a função de informar se o frete é gratuito
         shipping: { free_shipping: freeShipping },
+        // Desestruturo o available_quantity que informa se o produto ainda está disponível
         available_quantity: available,
       },
     } = this.props;
