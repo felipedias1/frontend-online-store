@@ -48,6 +48,11 @@ button, .btn {
   transition: transform 0.2s;
 }
 
+.card-container a {
+  display: flex;
+  justify-items: flex-start;
+}
+
 .header-container a:hover, button:hover, .btn:hover {
   font-weight: 600;
   opacity: 100%;
@@ -123,22 +128,7 @@ button, .btn {
   color: black;
 }
 
-.card-container a {
-  /* align-items: center; */
-  display: flex;
-  justify-items: flex-start;
-  /* flex-direction: row; */
-  /* justify-content: flex-start; */
-  /* flex-flow: row wrap; */
-}
-
-/* .card-container a button {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-} */
-
-#comment {
+textarea {
   resize: none;
 }
 
