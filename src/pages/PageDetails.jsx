@@ -41,6 +41,7 @@ class PageDetails extends React.Component {
         </p>
         <button
           type="button"
+          {/* Ao acionar o evento onClick é passado à função setCart os parametros abaixo */}
           onClick={ () => setCart({ id, title, price, quant: 1, thumbnail }) }
           data-testid="product-detail-add-to-cart"
         >
