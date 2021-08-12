@@ -24,4 +24,7 @@ class Checkout extends Component {
   }
 }
 
+Checkout.propTypes = {
+  cart: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 export default Checkout;
