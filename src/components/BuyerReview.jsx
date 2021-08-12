@@ -23,10 +23,10 @@ export default class BuyerReview extends Component {
   }
 
   render() {
-    // Desconstroi o state
+    // Desconstroi o state para usar no render()
     const { email, cpf, fullName, phone, cep, address } = this.state;
     return (
-
+      // Inicia estrutura para montagem das Informações do Comprador
       <form className="checkout-user-info">
         <h3>Informações do comprador</h3>
         <div className="buyer-inputs">
