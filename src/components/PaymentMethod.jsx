@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 export default class PaymentMethod extends Component {
   render() {
+    // Renderização simples de input type radio simulando opção bancária
     return (
       <div className="checkout-payment-method">
         <h3>Método de pagamento</h3>
