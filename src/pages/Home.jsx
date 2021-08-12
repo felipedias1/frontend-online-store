@@ -84,6 +84,7 @@ class Home extends Component {
           {/* Executa o componente SearchBar aparecendo na section da... */}
           {/* ...listagem de produtos */}
           <SearchBar handleSubmit={ this.handleSubmit } />
+          {/* Chama o componente ListProducts chamando os produtos */}
           <ListProducts setCart={ setCart } products={ products } />
         </section>
       </section>

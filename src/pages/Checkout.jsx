@@ -6,10 +6,6 @@ import BuyerReview from '../components/BuyerReview';
 import PaymentMethod from '../components/PaymentMethod';
 
 class Checkout extends Component {
-  emptyCart() {
-    console.log('finalizar compra');
-  }
-
   render() {
     // Recebe a props cart vinda do App.js com as informações atuais do carrinho
     const { cart } = this.props;
