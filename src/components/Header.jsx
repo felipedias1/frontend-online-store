@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 class Header extends Component {
   render() {
+    // Recebo a props cartItems que tem as informações dos produtos que estão no carrinho
     const { cartItems } = this.props;
 
     // Faz um reduce para pegar a quantidade de itens no carrinho
