@@ -6,7 +6,7 @@ class ProductsReview extends Component {
     // Recebe a props cart de carrinho do componente Checkout
     const { cart } = this.props;
     // Valor inicial do reduce para fazer início da somatória
-    const magicNumber = 0;
+    const initialValue = 0;
 
     return (
       <div className="checkout-cart">
@@ -41,7 +41,7 @@ class ProductsReview extends Component {
             {cart.reduce((a, b) => {
               a += b.price * b.quant;
               return a;
-            }, magicNumber).toFixed(2)}
+            }, initialValue).toFixed(2)}
           </span>
         </p>
       </div>
