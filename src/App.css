@@ -176,3 +176,8 @@ button, .btn {
   display: flex;
   justify-content: center;
 }
+
+.buyer-inputs {
+  display: flex;
+  flex-wrap: wrap;
+}
