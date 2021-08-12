@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
 
-// Quando se declara o export default desta forma, e no BuyerReview também, a função handleChange pode ser lida nesta classe sem necessidade de props
-export default class PaymentMethod extends Component {
+class PaymentMethod extends Component {
+  constructor(props) {
+    super(props);
+
+    // Prepara a função para ser usada na classe toda
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  // Função que quando for alterar algo o state do campo é alterado de imediato na state
+  handleChange(event) {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  }
+
   render() {
     // Renderização simples de input type radio simulando opção bancária
     return (
@@ -44,3 +56,5 @@ export default class PaymentMethod extends Component {
     );
   }
 }
+
+export default PaymentMethod;

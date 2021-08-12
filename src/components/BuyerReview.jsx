@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class BuyerReview extends Component {
+class BuyerReview extends Component {
   constructor(props) {
     super(props);
 
@@ -13,6 +13,8 @@ export default class BuyerReview extends Component {
       cep: '', // 12345-67
       address: '', // Rua Central do Brasil, nr. 123
     };
+
+    // Prepara a função para ser usada na classe toda
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -90,3 +92,5 @@ export default class BuyerReview extends Component {
     );
   }
 }
+
+export default BuyerReview;
