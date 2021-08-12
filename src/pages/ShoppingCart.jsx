@@ -13,6 +13,7 @@ class ShoppingCart extends Component {
     this.renderIsEmpty = this.renderEmpty.bind(this);
   }
 
+  // a renderList será utilizada apenas no renderContent, sua criação foi com o intuito de não tornar muito verboso o render()
   renderList() {
     // Recebe a props do App.js que está na Route de path /cart
     // É recebido a props da função updateQuant e o cart com os itens no carrinho
