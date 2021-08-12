@@ -5,9 +5,12 @@ import { getProductsFromCategoryAndQuery } from '../services/api';
 class PageDetails extends React.Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       item: '',
     };
+
+    // Permite o uso das funções abaixo para serem utilizadas em toda a classe com o .this
     this.searchId = this.searchId.bind(this);
     // this.testFun = this.testFun.bind(this);
   }
