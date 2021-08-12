@@ -42,7 +42,9 @@ class ShoppingCart extends Component {
         </div>
         <p>
           Valor total do carrinho:
+          {/* Coloca em negrito o valor total do carrinho */}
           <span style={ { fontWeight: 'bold' } }>
+            { ' ' }
             R$
             { ' ' }
             {cart.reduce((a, b) => {
