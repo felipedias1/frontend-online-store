@@ -29,12 +29,18 @@ class ShoppingCart extends Component {
   }
 
   renderContent() {
+    
     return (
       <div className="checkout">
         <h2>Checkout</h2>
         <div>
           { this.renderList() }
         </div>
+        <p>Valor total do carrinho:</p>
+        {cart.reduce((a, b) => {
+            a += b.price * b.quant;
+            return a;
+          }, magicNumber)}        
         <Link
           to="/checkout"
           data-testid="checkout-products"
