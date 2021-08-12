@@ -23,12 +23,16 @@ class ProductsReview extends Component {
         ))}
 
         <p>
-          Total:
-          {/* Uso o reduce para pegar o valor total do preço do carrinho */}
-          {cart.reduce((a, b) => {
-            a += b.price * b.quant;
-            return a;
-          }, magicNumber)}
+          Valor total do carrinho:
+          <span style={ { fontWeight: 'bold' } }>
+            R$
+            { ' ' }
+            {/* Uso o reduce para pegar o valor total do preço do carrinho */}
+            {cart.reduce((a, b) => {
+              a += b.price * b.quant;
+              return a;
+            }, magicNumber).toFixed(2)}
+          </span>
         </p>
       </div>
     );
