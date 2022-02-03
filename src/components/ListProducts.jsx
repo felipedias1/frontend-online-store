@@ -8,17 +8,15 @@ class ListProducts extends Component {
     const { products } = this.props;
     const { setCart } = this.props;
     return (
-      <section>
-        <div className="card-container">
-          {products.map((produto) => (
-            <ProductCard
-              key={ produto.id }
-              produto={ produto }
-              setCart={ setCart }
-            />
-          ))}
-        </div>
-      </section>
+      <div className="card-container">
+        {products.map((produto) => (
+          <ProductCard
+            key={ produto.id }
+            produto={ produto }
+            setCart={ setCart }
+          />
+        ))}
+      </div>
     );
   }
 }

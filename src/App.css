@@ -50,7 +50,7 @@ button, .btn {
 
 .card-container a {
   display: flex;
-  justify-items: flex-start;
+  justify-items: center;
 }
 
 .header-container a:hover, button:hover, .btn:hover {
@@ -65,6 +65,7 @@ button, .btn {
 
 .main-content {
   display: flex;
+  flex-direction: row;
 }
 
 /* Conteiner que lista as categorias existentes */
@@ -100,15 +101,25 @@ button, .btn {
 .products-container {
   background-color: rgb(236, 235, 235);
   border-radius: 2px;
-  flex-flow: row wrap;
-  flex-direction: row;
-  margin-left: 10px;
+  display: flex;
+  flex-flow: column;
+  margin-left: 5px;
   padding: 15px;
-  width: 80%;
+  width: 100%;
 }
 
-.products-container img {
-  width: 150px;
+.list-products {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.list-products > div {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
 .product-card {
@@ -117,11 +128,15 @@ button, .btn {
   border-radius: 10px;
   display: flex;
   flex-flow: column wrap;
-  height: 380px;
+  height: 300px;
   justify-content: space-evenly;
   margin: 7px;
   padding: 3px 5px;
-  width: 230px;
+  width: 200px;
+}
+
+.product-card img {
+  width: 75px;
 }
 
 .product-card p {
@@ -184,3 +199,4 @@ textarea {
   display: flex;
   flex-wrap: wrap;
 }
+

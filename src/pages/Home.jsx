@@ -80,13 +80,17 @@ class Home extends Component {
             />
           ))}
         </div>
-        <section className="products-container">
-          {/* Executa o componente SearchBar aparecendo na section da... */}
-          {/* ...listagem de produtos */}
-          <SearchBar handleSubmit={ this.handleSubmit } />
-          {/* Chama o componente ListProducts chamando os produtos */}
-          <ListProducts setCart={ setCart } products={ products } />
-        </section>
+        <div className="products-container">
+          <div className="search-bar">
+            {/* Executa o componente SearchBar aparecendo na section da... */}
+            {/* ...listagem de produtos */}
+            <SearchBar handleSubmit={ this.handleSubmit } />
+          </div>
+          <div className="list-products">
+            {/* Chama o componente ListProducts chamando os produtos */}
+            <ListProducts setCart={ setCart } products={ products } />
+          </div>
+        </div>
       </section>
     );
   }
